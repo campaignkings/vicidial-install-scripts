@@ -16,13 +16,16 @@ yum install git -y
 yum install -y kernel*
 
 #Disable SELINUX
+
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config    
 
 reboot
 
 
 cd /usr/src/
+
 git clone https://github.com/campaignkings/vicidial-install-scripts.git
+
 cd vicidial-install-scripts
 
 chmod +x alma9.sh
