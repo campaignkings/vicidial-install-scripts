@@ -6,7 +6,7 @@ hostnamectl set-hostname xxxxxx.xxxxx.xxx
 vi /etc/hosts
 ##Change domain name for actual server ip (xxx.xxx.xxx.xxx   complete domain name    subdomain only)
 
-timedatectl set-timezone America/New_York
+timedatectl set-timezone America/Los_Angeles
 
 yum check-update
 yum update -y
@@ -29,4 +29,5 @@ git clone https://github.com/campaignkings/vicidial-install-scripts.git
 cd vicidial-install-scripts
 <br>
 chmod +x alma9.sh
+<br>
 ./alma9.sh
