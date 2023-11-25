@@ -212,7 +212,7 @@ wget https://vicidialhelp.com/files/newt.h
 cd /usr/src/
 mkdir dahdi-linux-complete-3.2.0+3.2.0
 cd dahdi-linux-complete-3.2.0+3.2.0
-wget https://dialer.one/dahdi-alma9.zip
+wget https://vicidialhelp.com/files/dahdi-alma9.zip
 unzip dahdi-alma9.zip
 yum in newt* -y
 
@@ -790,3 +790,4 @@ read -p 'Press Enter to Reboot: '
 echo "Restarting AlmaLinux"
 
 reboot
+
