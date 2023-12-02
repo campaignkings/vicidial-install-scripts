@@ -16,14 +16,21 @@ dnf module enable mariadb:10.5 -y
 
 dnf -y install dnf-plugins-core
 
-yum install -y php screen php-mcrypt subversion php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-opcache -y 
-yum in -y wget unzip make patch gcc gcc-c++ subversion php php-devel php-gd gd-devel readline-devel php-mbstring php-mcrypt 
-yum in -y php-imap php-ldap php-mysqli php-odbc php-pear php-xml php-xmlrpc curl curl-devel perl-libwww-perl ImageMagick 
+yum install -y php screen php-mcrypt subversion php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-opcache 
+sleep 2
+yum install -y wget unzip make patch gcc gcc-c++ subversion php php-devel php-gd gd-devel readline-devel php-mbstring php-mcrypt
+sleep 2
+yum install -y php-imap php-ldap php-mysqli php-odbc php-pear php-xml php-xmlrpc curl curl-devel perl-libwww-perl ImageMagick 
+sleep 2
 yum in -y newt-devel libxml2-devel kernel-devel sqlite-devel libuuid-devel sox sendmail lame-devel htop iftop perl-File-Which
-yum in -y php-opcache libss7 mariadb-devel libss7* libopen* 
-yum in -y sqlite-devel httpd mod_ssl nano chkconfig htop atop mytop iftop
-yum in -y libedit-devel uuid* libxml2* speex* speex-devel* speexdsp*
+sleep 2
+yum install -y php-opcache libss7 mariadb-devel libss7* libopen* 
+sleep 2
+yum install -y sqlite-devel httpd mod_ssl nano chkconfig htop atop mytop iftop
+sleep 2
+yum install -y libedit-devel uuid* libxml2* speex* speex-devel* speexdsp*
 
+sleep 10
 
 dnf --enablerepo=crb install libsrtp-devel -y
 dnf config-manager --set-enabled crb
