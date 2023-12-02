@@ -424,6 +424,11 @@ perl install.pl --no-prompt --copy_sample_conf_files=Y --khomp-enable=1
 #Install Crontab
 cat <<CRONTAB>> /root/crontab-file
 
+###certbot renew
+51 23 1 * * /usr/bin/systemctl stop firewalld
+52 23 1 * * /usr/sbin/certbot renew
+53 23 1 * * /usr/bin/systemctl start firewalld
+54 23 1 * * /usr/bin/systemctl restart httpd
 
 ### recording mixing/compressing/ftping scripts
 #0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57 * * * * /usr/share/astguiclient/AST_CRON_audio_1_move_mix.pl
