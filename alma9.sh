@@ -763,6 +763,8 @@ RemainAfterExit=yes
 WantedBy=multi-user.target
 EOF
 
+yum in certbot -y
+
 systemctl daemon-reload
 sudo systemctl enable rc-local.service
 sudo systemctl start rc-local.service
