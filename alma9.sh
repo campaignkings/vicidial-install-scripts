@@ -22,7 +22,7 @@ yum in -y php-imap php-ldap php-mysqli php-odbc php-pear php-xml php-xmlrpc curl
 yum in -y newt-devel libxml2-devel kernel-devel sqlite-devel libuuid-devel sox sendmail lame-devel htop iftop perl-File-Which
 yum in -y php-opcache libss7 mariadb-devel libss7* libopen* 
 yum in -y sqlite-devel httpd mod_ssl nano chkconfig htop atop mytop iftop
-yum in -y libedit-devel uuid* libxml2*
+yum in -y libedit-devel uuid* libxml2* speex* speex-devel* speexdsp*
 
 
 dnf --enablerepo=crb install libsrtp-devel -y
@@ -83,7 +83,7 @@ port = 3306
 socket = /var/lib/mysql/mysql.sock
 
 [mysqld]
-datadir = /srv/mysql
+datadir = /var/lib/mysql
 #tmpdir = /home/mysql_tmp
 socket = /var/lib/mysql/mysql.sock
 user = mysql
@@ -107,7 +107,7 @@ tmp_table_size = 128M
 table_cache = 1024
 
 join_buffer_size = 1M
-key_buffer = 4GB
+key_buffer = 4G
 sort_buffer_size = 6M
 read_buffer_size = 4M
 read_rnd_buffer_size = 16M
@@ -205,14 +205,14 @@ ldconfig
 
 #Install Dahdi
 echo "Install Dahdi"
-
+ln -sf /usr/lib/modules/$(uname -r)/vmlinux.xz /boot/
 cd /etc/include
-wget https://vicidialhelp.com/files/newt.h
+wget https://dialer.one/newt.h
 
 cd /usr/src/
 mkdir dahdi-linux-complete-3.2.0+3.2.0
 cd dahdi-linux-complete-3.2.0+3.2.0
-wget https://vicidialhelp.com/files/dahdi-alma9.zip
+wget https://dialer.one/dahdi-alma9.zip
 unzip dahdi-alma9.zip
 yum in newt* -y
 
@@ -313,8 +313,6 @@ update servers set asterisk_version='16.30.0';
 quit
 MYSQLCREOF
 
-
-
 read -p 'Press Enter to continue: '
 
 echo 'Continuing...'
@@ -391,10 +389,6 @@ VARfastagi_log_checkforwait => 60
 
 # Expected DB Schema version for this install
 ExpectedDBSchema => 1645
-
-# 3rd-party add-ons for this install
-KhompEnabled => 1
-
 ASTGUI
 
 echo "Replace IP address in Default"
