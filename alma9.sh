@@ -777,7 +777,7 @@ service firewalld start
 systemctl enable firewalld
 systemctl enable rc-local
 
-mv /etc/httpd/conf.d/viciportal-ssl.conf /etc/httpd/conf.d/viciportal-ssl.conf.off
+mv /var/www/vhosts/dynportal/dynportal/etc/httpd/conf.d/viciportal-ssl.conf /etc/httpd/conf.d/viciportal-ssl.conf
 
 read -p 'Press Enter to Reboot: '
 
