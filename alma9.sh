@@ -22,7 +22,7 @@ yum install -y wget unzip make patch gcc gcc-c++ subversion php php-devel php-gd
 sleep 2
 yum install -y php-imap php-ldap php-mysqli php-odbc php-pear php-xml php-xmlrpc curl curl-devel perl-libwww-perl ImageMagick 
 sleep 2
-yum in -y newt-devel libxml2-devel kernel-devel sqlite-devel libuuid-devel sox sendmail lame-devel htop iftop perl-File-Which
+yum install -y newt-devel libxml2-devel kernel-devel sqlite-devel libuuid-devel sox sendmail lame-devel htop iftop perl-File-Which
 sleep 2
 yum install -y php-opcache libss7 mariadb-devel libss7* libopen* 
 sleep 2
