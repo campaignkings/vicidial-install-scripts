@@ -30,7 +30,7 @@ yum install -y sqlite-devel httpd mod_ssl nano chkconfig htop atop mytop iftop
 sleep 2
 yum install -y libedit-devel uuid* libxml2* speex* speex-devel* speexdsp*
 
-sleep 10
+sleep 3
 
 dnf --enablerepo=crb install libsrtp-devel -y
 dnf config-manager --set-enabled crb
